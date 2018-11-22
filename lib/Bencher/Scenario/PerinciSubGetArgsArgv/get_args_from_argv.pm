@@ -48,6 +48,17 @@ our $scenario = {
             },
         },
         {
+            name => 'meta norm + 0 known args + 0 args',
+            args => {
+                args => {
+                    common_opts => {},
+                    meta => $meta0,
+                    argv => [],
+                    meta_is_normalized => 1,
+                },
+            },
+        },
+        {
             name => '2 known args + 0 args',
             args => {
                 args => {
@@ -79,12 +90,33 @@ our $scenario = {
             },
         },
         {
+            name => '2 known args + 2 args named',
+            args => {
+                args => {
+                    common_opts => {},
+                    meta => $meta2,
+                    argv => [qw/--a2 abc --a1 123/],
+                },
+            },
+        },
+        {
             name => 'meta norm + 2 known args + 2 args positional',
             args => {
                 args => {
                     common_opts => {},
                     meta => $meta2n,
                     argv => ["123", "abc"],
+                    meta_is_normalized => 1,
+                },
+            },
+        },
+        {
+            name => 'meta norm + 2 known args + 2 args named',
+            args => {
+                args => {
+                    common_opts => {},
+                    meta => $meta2n,
+                    argv => [qw/--a2 abc --a1 123/],
                     meta_is_normalized => 1,
                 },
             },
